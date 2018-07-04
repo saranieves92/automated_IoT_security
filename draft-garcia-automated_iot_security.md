@@ -1,6 +1,7 @@
 ---
 abbrev: Automated IoT Security
-title: Automated IoT Security 
+title: Automated IoT Security
+docname: draft-garciamorchon-t2trg-automated-iot-security-00 
 cat: info
 stand_alone: true
 informative:
@@ -529,18 +530,22 @@ pi:
 
 --- abstract
 
-
-
 The Internet of Things (IoT) concept refers to the usage of standard Internet protocols to allow for human-to-thing and thing-to-thing communication. 
 The security needs are well-recognized and and many standardization steps for providing security have been taken, for example, the specification of Constrained Application Protocol (CoAP) over Datagram Transport Layer Security (DTLS). 
 However, the design space of IoT applications and systems is complex and exposed to multiple types of threats.
+In particular, threats keep evolving at a fast pace while many IoT systems are rarely updated and still remain operational for decades. 
 
-This document summarizes key security threats and suitable mitigation strategies to protect against these threats and describes a comprehensive solution to integrate existing security processes such as risk asssement or vulnerability assessment in the lifecycle of a smart object in an IoT application.
-To this end, we describe two protocols: the Protocol for Automatic Security Configuration (PASC) and the Protocol for Automatic Vulnerability Assessment (PAVA). 
-PACS is executed during the onboarding phase of a smart object in an IoT system and is in charge of automatically assigning a security profile. The assigned security profile fits the specific environment and threat model of the application in which the device has been deployed. 
+This document has three main parts:
+First, it summarizes exemplary security threats and suitable mitigation strategies to protect against multiple types of threats.
+Second, it describes a comprehensive agile security framework to integrate existing security processes such as risk asssement or vulnerability assessment in the lifecycle of a smart object in an IoT application. 
+Thus, instead of having a security configuration that is fixed at manufacturing time, our approach allows us to apply a -- security profile -- on the device tailored for a specific environment at any point of time.
+Third, we discuss the concept of security profiles and give examples of them.
+
+The core of our agile security approach relies on two protocols: the Protocol for Automatic Security Configuration (PASC) and the Protocol for Automatic Vulnerability Assessment (PAVA). 
+PACS is executed during the onboarding phase of a smart object in an IoT system and is in charge of automatically performing a risk assessment and assigning a security profile to defeat the identified risks. The assigned security profile fits the specific environment and threat model of the application in which the device has been deployed. 
 PAVA is executed during the operation of the IoT object and ensures that vulnerabilities in the smart object and IoT system are discovered in a proactive way. 
-We describe a few examplary security profiles that could be applicable in different application areas.
-
+These two protocols can benefit users, manufactures and operators by automating IoT security.
+We describe a few examplary security profiles that could be applicable in different application areas and automatically configured by means of PASC and PAVA.
 
 --- middle
 
@@ -561,10 +566,11 @@ Thus, this document firstly provides an overview of general threats.
 Which mitigation strategies are most suitable to and required in an IoT system depends on several factors, including, the operational features of the IoT system or the threats that are applicable to that system.
 Thus, this document further discusses processes that facilitate the proper design and operation of secure IoT systems, namely business impact analysis, risk assessment, privacy impact analysis, vulnerability analyis and incident reporting.
 We further argue that even if these processes help IoT system designers to make secure products, a better approach would be to fully integrate these processes in the lifecycle of a smart object in an IoT application.
-The reason is that IoT products are designed assuming a given environment and threat model that determines the require mitigation strategies. However, in practice, a IoT product can be deployed in very different environments and very different threat models.
+The reason is that IoT products are designed assuming a given environment and threat model that determines the require mitigation strategies. However, in practice, a IoT product can be deployed in very different environments and very different threat models. 
+Furthermore, while threats keep appearing at a very fast pace, IoT systems remain operational -- with limited amount of updates -- for a very long period of time.
 
 Thus, in order to integrate security processes in the IoT lifecycle, we describe two protocols, the Protocol for Automatic Security Configuration (PACS) and the Protocol for Automatic Vulnerability Assessment (PAVA).
-These two protocols allow us to integrate risk analysis, privacy impact analysis, and vulnerability assessments in the actual lifecycle of the smart objects so that smart objects can be configured with security profiles tailored to the very specific environment in which they are deployed.
+These two protocols allow us to integrate risk analysis, privacy impact analysis, and vulnerability assessments in the actual lifecycle of the smart objects so that smart objects can be configured -- continuously -- with security profiles tailored to the very specific environment in which they are deployed.
 
 Finally, this document describes diffent four exemplary security profiles, each comprising a set of threats, mitigation strategies, and configuration parameters,  that would be automatically applied to smart objects when joining different environments.
 
